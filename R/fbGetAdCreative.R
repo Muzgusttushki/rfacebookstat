@@ -73,7 +73,7 @@ fbGetAdCreative <- function(accounts_id  = getOption("rfacebookstat.accounts_id"
       out_headers <- append(out_headers, setNames(list(headers(api_answer)), api_answer$headers$`x-fb-trace-id`))
       
       pars_answer <- content(api_answer, as = "parsed")
-      
+      return(pars_answer)
       if(!is.null(pars_answer$error)) {
         error <- pars_answer$error
         message("\n",pars_answer$error,"\n")
